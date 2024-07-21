@@ -12,7 +12,7 @@ Aplikasi Pemesanan Kamar adalah sebuah aplikasi web yang dirancang untuk mengelo
 ## Struktur Folder
 Berikut adalah struktur folder dan penjelasan singkat mengenai masing-masing folder:
 ```plaintext
-my-hotel-booking-app/
+pemesanan-hotel/
 │
 ├── app/
 │ ├── Charts/
