@@ -2,11 +2,16 @@
 
 @section('content')
     <div class="container mt-4">
-        <div class="card">
+
+        <div class="card mt-4">
             <div class="card-header">
-                <h2 class="text-center mb-4">Daftar Pemesanan</h2>
+                <h2 class="text-center mb-4">Daftar Pemesanan dan Grafik Jenis Kamar</h2>
             </div>
             <div class="card-body">
+                <!-- code untuk menampilkan chart -->
+                {!! $chart->container() !!}
+
+                <!-- code untuk menampilkan daftar pemesanan -->
                 @if ($bookings->isEmpty())
                     <div class="alert alert-info">
                         Tidak ada pemesanan untuk ditampilkan.
@@ -40,7 +45,8 @@
                                     <td>{{ $booking->discount }}</td>
                                     <td>Rp. {{ number_format($booking->total_bayar, 2, ',', '.') }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-info btn-sm">Lihat</a>
+                                        <a href="{{ route('bookings.show', $booking->id) }}"
+                                            class="btn btn-info btn-sm">Lihat</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -50,7 +56,8 @@
                     <!-- Paginasi -->
                     <div class="d-flex justify-content-between">
                         <div>
-                            Showing {{ $bookings->firstItem() }} to {{ $bookings->lastItem() }} of {{ $bookings->total() }} entries
+                            Showing {{ $bookings->firstItem() }} to {{ $bookings->lastItem() }} of
+                            {{ $bookings->total() }} entries
                         </div>
                         <div>
                             {{ $bookings->links() }}
@@ -60,4 +67,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Scripts untuk chart -->
+    <script src="{{ $chart->cdn() }}"></script>
+    {{ $chart->script() }}
 @endsection

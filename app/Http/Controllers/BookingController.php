@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Charts\JenisKamarChart;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -11,11 +12,17 @@ class BookingController extends Controller
     {
         // Ambil data list pemesanan
         $bookings = Booking::paginate(100);
-        return view('bookings.index', compact('bookings'));
+        $chart = (new JenisKamarChart())->build();
+        return view('bookings.index', compact('bookings', 'chart'));
     }
     public function create()
     {
         return view('bookings.create');
+    }
+    public function show($id)
+    {
+        $booking = Booking::findOrFail($id);
+        return response()->json($booking);
     }
 
     public function store(Request $request)
