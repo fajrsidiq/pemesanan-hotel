@@ -65,5 +65,4 @@ pemesanan-hotel/
 ├── .env # File konfigurasi lingkungan
 ├── composer.json # File konfigurasi Composer untuk dependensi PHP
 ├── readme.md # Dokumentasi proyek
-├── README.pdf # Dokumentasi proyek dalam format PDF
 └── artisan # CLI untuk berbagai perintah Artisan Laravel
