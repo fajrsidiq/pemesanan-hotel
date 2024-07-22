@@ -5,7 +5,7 @@
 
         <div class="card mt-4">
             <div class="card-header">
-                <h2 class="text-center mb-4">Daftar Pemesanan dan Grafik Jenis Kamar</h2>
+                <h2 class="text-center mb-4">Daftar dan Grafik Pemesanan</h2>
             </div>
             <div class="card-body">
                 <!-- code untuk menampilkan chart -->
