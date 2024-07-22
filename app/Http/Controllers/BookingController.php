@@ -59,6 +59,7 @@ class BookingController extends Controller
             $discount = '10%';
         }
 
+        //Pengecekan kondisi percabangan breakfast
         if ($breakfast) {
             $totalBayar += 80000 * $durasiMenginap; // Tambahan breakfast
         }
